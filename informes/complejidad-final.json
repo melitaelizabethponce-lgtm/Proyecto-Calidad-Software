@@ -1,0 +1,875 @@
+{
+  "aggregate": {
+    "cyclomatic": 28,
+    "cyclomaticDensity": 23.14,
+    "halstead": {
+      "bugs": 0.937,
+      "difficulty": 38.343,
+      "effort": 107806.894,
+      "length": 431,
+      "time": 5989.272,
+      "vocabulary": 92,
+      "volume": 2811.655,
+      "operands": {
+        "distinct": 70,
+        "total": 244,
+        "identifiers": [
+          "estudiantes",
+          "asistencias",
+          "estaVacio",
+          "valor",
+          "null",
+          "undefined",
+          "\"\"",
+          "encontrarEstudiante",
+          "id",
+          "find",
+          "estudiante",
+          "asistenciaDuplicada",
+          "fecha",
+          "some",
+          "asistencia",
+          "registrarEstudiante",
+          "nombre",
+          "carrera",
+          "campos",
+          "mensaje",
+          "\"El ID es obligatorio\"",
+          "\"El nombre es obligatorio\"",
+          "\"La carrera es obligatoria\"",
+          "campo",
+          "console",
+          "log",
+          "false",
+          "\"El estudiante ya existe\"",
+          "push",
+          "\"Estudiante registrado\"",
+          "true",
+          "registrarAsistencia",
+          "estado",
+          "\"La fecha es obligatoria\"",
+          "\"El estado es obligatorio\"",
+          "\"No existe el estudiante\"",
+          "\"La asistencia ya fue registrada\"",
+          "\"Asistencia registrada\"",
+          "buscarAsistencia",
+          "filter",
+          "contarAsistencias",
+          "total",
+          "0",
+          "corresponde",
+          "asistio",
+          "\"Presente\"",
+          "\"Atrasado\"",
+          "includes",
+          "listarEstudiantes",
+          "slice",
+          "obtenerResumen",
+          "presentes",
+          "ausentes",
+          "\"Ausente\"",
+          "limpiarDatos",
+          "length",
+          "require",
+          "main",
+          "module",
+          "\"EST001\"",
+          "\"Ana Pérez\"",
+          "\"Software\"",
+          "\"EST002\"",
+          "\"Luis López\"",
+          "\"Redes\"",
+          "\"2026-11-09\"",
+          "\"Estudiantes:\"",
+          "\"Asistencias de EST001:\"",
+          "\"Resumen:\"",
+          "exports"
+        ]
+      },
+      "operators": {
+        "distinct": 22,
+        "total": 187,
+        "identifiers": [
+          "const",
+          "=",
+          "[]",
+          "function",
+          "return",
+          "||",
+          "===",
+          "()",
+          ".",
+          "function=>",
+          "&&",
+          ",",
+          "{}",
+          ":",
+          "forof",
+          "if",
+          "! (prefix)",
+          "let",
+          "++ (postfix)",
+          "!==",
+          "continue",
+          "else"
+        ]
+      }
+    },
+    "paramCount": 16,
+    "sloc": {
+      "logical": 121,
+      "physical": 164
+    }
+  },
+  "settings": {
+    "commonjs": false,
+    "esmImportExport": {
+      "halstead": false,
+      "lloc": false
+    },
+    "forin": false,
+    "logicalor": true,
+    "switchcase": true,
+    "templateExpression": {
+      "halstead": true,
+      "lloc": true
+    },
+    "trycatch": false,
+    "newmi": false
+  },
+  "classes": [],
+  "dependencies": [],
+  "errors": [],
+  "lineEnd": 164,
+  "lineStart": 1,
+  "maintainability": 104.762,
+  "methods": [
+    {
+      "cyclomatic": 3,
+      "cyclomaticDensity": 300,
+      "halstead": {
+        "bugs": 0.011,
+        "difficulty": 2.25,
+        "effort": 75.799,
+        "length": 12,
+        "time": 4.211,
+        "vocabulary": 7,
+        "volume": 33.688,
+        "operands": {
+          "distinct": 4,
+          "total": 6,
+          "identifiers": [
+            "valor",
+            "null",
+            "undefined",
+            "\"\""
+          ]
+        },
+        "operators": {
+          "distinct": 3,
+          "total": 6,
+          "identifiers": [
+            "return",
+            "||",
+            "==="
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 1,
+        "physical": 3
+      },
+      "errors": [],
+      "lineEnd": 12,
+      "lineStart": 10,
+      "name": "estaVacio",
+      "paramNames": [
+        "valor"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 33.333,
+      "halstead": {
+        "bugs": 0.007,
+        "difficulty": 2,
+        "effort": 39.303,
+        "length": 7,
+        "time": 2.183,
+        "vocabulary": 7,
+        "volume": 19.651,
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "estudiantes",
+            "find",
+            "estudiante"
+          ]
+        },
+        "operators": {
+          "distinct": 4,
+          "total": 4,
+          "identifiers": [
+            "return",
+            "()",
+            ".",
+            "function=>"
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 3,
+        "physical": 3
+      },
+      "errors": [],
+      "lineEnd": 17,
+      "lineStart": 15,
+      "name": "encontrarEstudiante",
+      "paramNames": [
+        "id"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 100,
+      "halstead": {
+        "bugs": 0.003,
+        "difficulty": 1.5,
+        "effort": 15,
+        "length": 5,
+        "time": 0.833,
+        "vocabulary": 4,
+        "volume": 10,
+        "operands": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "estudiante",
+            "id"
+          ]
+        },
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "===",
+            "."
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 1,
+        "physical": 1
+      },
+      "errors": [],
+      "lineEnd": 16,
+      "lineStart": 16,
+      "name": "<anon method-1>",
+      "paramNames": [
+        "estudiante"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 33.333,
+      "halstead": {
+        "bugs": 0.007,
+        "difficulty": 2,
+        "effort": 39.303,
+        "length": 7,
+        "time": 2.183,
+        "vocabulary": 7,
+        "volume": 19.651,
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "asistencias",
+            "some",
+            "asistencia"
+          ]
+        },
+        "operators": {
+          "distinct": 4,
+          "total": 4,
+          "identifiers": [
+            "return",
+            "()",
+            ".",
+            "function=>"
+          ]
+        }
+      },
+      "paramCount": 2,
+      "sloc": {
+        "logical": 3,
+        "physical": 5
+      },
+      "errors": [],
+      "lineEnd": 24,
+      "lineStart": 20,
+      "name": "asistenciaDuplicada",
+      "paramNames": [
+        "id",
+        "fecha"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 2,
+      "cyclomaticDensity": 200,
+      "halstead": {
+        "bugs": 0.009,
+        "difficulty": 3,
+        "effort": 85.304,
+        "length": 11,
+        "time": 4.739,
+        "vocabulary": 6,
+        "volume": 28.435,
+        "operands": {
+          "distinct": 3,
+          "total": 6,
+          "identifiers": [
+            "asistencia",
+            "id",
+            "fecha"
+          ]
+        },
+        "operators": {
+          "distinct": 3,
+          "total": 5,
+          "identifiers": [
+            "&&",
+            "===",
+            "."
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 1,
+        "physical": 2
+      },
+      "errors": [],
+      "lineEnd": 22,
+      "lineStart": 21,
+      "name": "<anon method-2>",
+      "paramNames": [
+        "asistencia"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 3,
+      "cyclomaticDensity": 13.636,
+      "halstead": {
+        "bugs": 0.124,
+        "difficulty": 11.275,
+        "effort": 4189.392,
+        "length": 75,
+        "time": 232.744,
+        "vocabulary": 31,
+        "volume": 371.565,
+        "operands": {
+          "distinct": 20,
+          "total": 41,
+          "identifiers": [
+            "campos",
+            "valor",
+            "id",
+            "mensaje",
+            "\"El ID es obligatorio\"",
+            "nombre",
+            "\"El nombre es obligatorio\"",
+            "carrera",
+            "\"La carrera es obligatoria\"",
+            "campo",
+            "estaVacio",
+            "console",
+            "log",
+            "false",
+            "encontrarEstudiante",
+            "\"El estudiante ya existe\"",
+            "estudiantes",
+            "push",
+            "\"Estudiante registrado\"",
+            "true"
+          ]
+        },
+        "operators": {
+          "distinct": 11,
+          "total": 34,
+          "identifiers": [
+            "const",
+            "=",
+            "[]",
+            ",",
+            "{}",
+            ":",
+            "forof",
+            "if",
+            "()",
+            ".",
+            "return"
+          ]
+        }
+      },
+      "paramCount": 3,
+      "sloc": {
+        "logical": 22,
+        "physical": 23
+      },
+      "errors": [],
+      "lineEnd": 49,
+      "lineStart": 27,
+      "name": "registrarEstudiante",
+      "paramNames": [
+        "id",
+        "nombre",
+        "carrera"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 4,
+      "cyclomaticDensity": 15.385,
+      "halstead": {
+        "bugs": 0.149,
+        "difficulty": 13.091,
+        "effort": 5860.757,
+        "length": 88,
+        "time": 325.598,
+        "vocabulary": 34,
+        "volume": 447.697,
+        "operands": {
+          "distinct": 22,
+          "total": 48,
+          "identifiers": [
+            "campos",
+            "valor",
+            "id",
+            "mensaje",
+            "\"El ID es obligatorio\"",
+            "fecha",
+            "\"La fecha es obligatoria\"",
+            "estado",
+            "\"El estado es obligatorio\"",
+            "campo",
+            "estaVacio",
+            "console",
+            "log",
+            "false",
+            "encontrarEstudiante",
+            "\"No existe el estudiante\"",
+            "asistenciaDuplicada",
+            "\"La asistencia ya fue registrada\"",
+            "asistencias",
+            "push",
+            "\"Asistencia registrada\"",
+            "true"
+          ]
+        },
+        "operators": {
+          "distinct": 12,
+          "total": 40,
+          "identifiers": [
+            "const",
+            "=",
+            "[]",
+            ",",
+            "{}",
+            ":",
+            "forof",
+            "if",
+            "()",
+            ".",
+            "return",
+            "! (prefix)"
+          ]
+        }
+      },
+      "paramCount": 3,
+      "sloc": {
+        "logical": 26,
+        "physical": 28
+      },
+      "errors": [],
+      "lineEnd": 79,
+      "lineStart": 52,
+      "name": "registrarAsistencia",
+      "paramNames": [
+        "id",
+        "fecha",
+        "estado"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 33.333,
+      "halstead": {
+        "bugs": 0.007,
+        "difficulty": 2,
+        "effort": 39.303,
+        "length": 7,
+        "time": 2.183,
+        "vocabulary": 7,
+        "volume": 19.651,
+        "operands": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "asistencias",
+            "filter",
+            "asistencia"
+          ]
+        },
+        "operators": {
+          "distinct": 4,
+          "total": 4,
+          "identifiers": [
+            "return",
+            "()",
+            ".",
+            "function=>"
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 3,
+        "physical": 3
+      },
+      "errors": [],
+      "lineEnd": 84,
+      "lineStart": 82,
+      "name": "buscarAsistencia",
+      "paramNames": [
+        "id"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 100,
+      "halstead": {
+        "bugs": 0.003,
+        "difficulty": 1.5,
+        "effort": 15,
+        "length": 5,
+        "time": 0.833,
+        "vocabulary": 4,
+        "volume": 10,
+        "operands": {
+          "distinct": 2,
+          "total": 3,
+          "identifiers": [
+            "asistencia",
+            "id"
+          ]
+        },
+        "operators": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "===",
+            "."
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 1,
+        "physical": 1
+      },
+      "errors": [],
+      "lineEnd": 83,
+      "lineStart": 83,
+      "name": "<anon method-3>",
+      "paramNames": [
+        "asistencia"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 3,
+      "cyclomaticDensity": 37.5,
+      "halstead": {
+        "bugs": 0.057,
+        "difficulty": 10.636,
+        "effort": 1804.391,
+        "length": 37,
+        "time": 100.244,
+        "vocabulary": 24,
+        "volume": 169.644,
+        "operands": {
+          "distinct": 11,
+          "total": 18,
+          "identifiers": [
+            "total",
+            "0",
+            "asistencia",
+            "asistencias",
+            "corresponde",
+            "id",
+            "asistio",
+            "\"Presente\"",
+            "\"Atrasado\"",
+            "includes",
+            "estado"
+          ]
+        },
+        "operators": {
+          "distinct": 13,
+          "total": 19,
+          "identifiers": [
+            "let",
+            "=",
+            "forof",
+            "const",
+            "===",
+            ".",
+            "()",
+            "[]",
+            ",",
+            "if",
+            "&&",
+            "++ (postfix)",
+            "return"
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 8,
+        "physical": 14
+      },
+      "errors": [],
+      "lineEnd": 100,
+      "lineStart": 87,
+      "name": "contarAsistencias",
+      "paramNames": [
+        "id"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 50,
+      "halstead": {
+        "bugs": 0.004,
+        "difficulty": 1.5,
+        "effort": 17.414,
+        "length": 5,
+        "time": 0.967,
+        "vocabulary": 5,
+        "volume": 11.61,
+        "operands": {
+          "distinct": 2,
+          "total": 2,
+          "identifiers": [
+            "estudiantes",
+            "slice"
+          ]
+        },
+        "operators": {
+          "distinct": 3,
+          "total": 3,
+          "identifiers": [
+            "return",
+            "()",
+            "."
+          ]
+        }
+      },
+      "paramCount": 0,
+      "sloc": {
+        "logical": 2,
+        "physical": 3
+      },
+      "errors": [],
+      "lineEnd": 105,
+      "lineStart": 103,
+      "name": "listarEstudiantes",
+      "paramNames": [],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 4,
+      "cyclomaticDensity": 23.529,
+      "halstead": {
+        "bugs": 0.082,
+        "difficulty": 17.818,
+        "effort": 4385.489,
+        "length": 53,
+        "time": 243.638,
+        "vocabulary": 25,
+        "volume": 246.124,
+        "operands": {
+          "distinct": 11,
+          "total": 28,
+          "identifiers": [
+            "total",
+            "0",
+            "presentes",
+            "ausentes",
+            "asistencia",
+            "asistencias",
+            "id",
+            "estado",
+            "\"Presente\"",
+            "\"Ausente\"",
+            "estudiante"
+          ]
+        },
+        "operators": {
+          "distinct": 14,
+          "total": 25,
+          "identifiers": [
+            "let",
+            "=",
+            "forof",
+            "const",
+            "if",
+            "!==",
+            ".",
+            "continue",
+            "++ (postfix)",
+            "else",
+            "===",
+            "return",
+            "{}",
+            ":"
+          ]
+        }
+      },
+      "paramCount": 1,
+      "sloc": {
+        "logical": 17,
+        "physical": 26
+      },
+      "errors": [],
+      "lineEnd": 133,
+      "lineStart": 108,
+      "name": "obtenerResumen",
+      "paramNames": [
+        "id"
+      ],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    },
+    {
+      "cyclomatic": 1,
+      "cyclomaticDensity": 50,
+      "halstead": {
+        "bugs": 0.009,
+        "difficulty": 1.5,
+        "effort": 38.774,
+        "length": 10,
+        "time": 2.154,
+        "vocabulary": 6,
+        "volume": 25.85,
+        "operands": {
+          "distinct": 4,
+          "total": 6,
+          "identifiers": [
+            "estudiantes",
+            "length",
+            "0",
+            "asistencias"
+          ]
+        },
+        "operators": {
+          "distinct": 2,
+          "total": 4,
+          "identifiers": [
+            "=",
+            "."
+          ]
+        }
+      },
+      "paramCount": 0,
+      "sloc": {
+        "logical": 2,
+        "physical": 4
+      },
+      "errors": [],
+      "lineEnd": 139,
+      "lineStart": 136,
+      "name": "limpiarDatos",
+      "paramNames": [],
+      "maxNestedMethodDepth": 0,
+      "nestedMethods": []
+    }
+  ],
+  "aggregateAverage": {
+    "cyclomatic": 2,
+    "cyclomaticDensity": 1.653,
+    "halstead": {
+      "bugs": 0.067,
+      "difficulty": 2.739,
+      "effort": 7700.492,
+      "length": 30.786,
+      "time": 427.805,
+      "vocabulary": 6.571,
+      "volume": 200.833,
+      "operands": {
+        "distinct": 5,
+        "total": 17.429
+      },
+      "operators": {
+        "distinct": 1.571,
+        "total": 13.357
+      }
+    },
+    "paramCount": 1.143,
+    "sloc": {
+      "logical": 8.643,
+      "physical": 11.714
+    }
+  },
+  "methodAverage": {
+    "cyclomatic": 2,
+    "cyclomaticDensity": 76.158,
+    "halstead": {
+      "bugs": 0.036,
+      "difficulty": 5.39,
+      "effort": 1277.325,
+      "length": 24.769,
+      "time": 70.963,
+      "vocabulary": 12.846,
+      "volume": 108.736,
+      "operands": {
+        "distinct": 6.923,
+        "total": 13.077
+      },
+      "operators": {
+        "distinct": 5.923,
+        "total": 11.692
+      }
+    },
+    "paramCount": 1.231,
+    "sloc": {
+      "logical": 6.923,
+      "physical": 8.923
+    }
+  }
+}

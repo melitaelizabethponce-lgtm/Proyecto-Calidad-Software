@@ -1,153 +1,157 @@
-// VERSIÓN INICIAL: contiene oportunidades de mejora para la práctica.
-// Sistema sencillo de control de asistencia universitaria.
 
-var estudiantes = [];
-var asistencias = [];
+// VERSIÓN REFACTORIZADA
+// Sistema de control de asistencia universitaria.
 
+// Almacenamiento de estudiantes y asistencias.
+const estudiantes = [];
+const asistencias = [];
+
+// Comprueba si un valor está vacío.
+function estaVacio(valor) {
+  return valor === null || valor === undefined || valor === "";
+}
+
+// Busca un estudiante por su identificador.
+function encontrarEstudiante(id) {
+  return estudiantes.find(estudiante => estudiante.id === id);
+}
+
+// Comprueba si una asistencia ya fue registrada.
+function asistenciaDuplicada(id, fecha) {
+  return asistencias.some(asistencia =>
+    asistencia.id === id && asistencia.fecha === fecha
+  );
+}
+
+// Registra un nuevo estudiante.
 function registrarEstudiante(id, nombre, carrera) {
-  if (id == null || id == "") {
-    console.log("El ID es obligatorio");
-    return false;
-  }
-  if (nombre == null || nombre == "") {
-    console.log("El nombre es obligatorio");
-    return false;
-  }
-  if (carrera == null || carrera == "") {
-    console.log("La carrera es obligatoria");
-    return false;
-  }
+  const campos = [
+    { valor: id, mensaje: "El ID es obligatorio" },
+    { valor: nombre, mensaje: "El nombre es obligatorio" },
+    { valor: carrera, mensaje: "La carrera es obligatoria" }
+  ];
 
-  for (var i = 0; i < estudiantes.length; i++) {
-    if (estudiantes[i].id == id) {
-      console.log("El estudiante ya existe");
+  for (const campo of campos) {
+    if (estaVacio(campo.valor)) {
+      console.log(campo.mensaje);
       return false;
     }
   }
 
-  estudiantes.push({ id: id, nombre: nombre, carrera: carrera });
+  if (encontrarEstudiante(id)) {
+    console.log("El estudiante ya existe");
+    return false;
+  }
+
+  estudiantes.push({ id, nombre, carrera });
   console.log("Estudiante registrado");
   return true;
 }
 
+// Registra la asistencia de un estudiante.
 function registrarAsistencia(id, fecha, estado) {
-  if (id == null || id == "") {
-    console.log("El ID es obligatorio");
-    return false;
-  }
-  if (fecha == null || fecha == "") {
-    console.log("La fecha es obligatoria");
-    return false;
-  }
-  if (estado == null || estado == "") {
-    console.log("El estado es obligatorio");
-    return false;
-  }
+  const campos = [
+    { valor: id, mensaje: "El ID es obligatorio" },
+    { valor: fecha, mensaje: "La fecha es obligatoria" },
+    { valor: estado, mensaje: "El estado es obligatorio" }
+  ];
 
-  var existe = false;
-  for (var i = 0; i < estudiantes.length; i++) {
-    if (estudiantes[i].id == id) {
-      existe = true;
-    }
-  }
-
-  if (existe == false) {
-    console.log("No existe el estudiante");
-    return false;
-  }
-
-  for (var j = 0; j < asistencias.length; j++) {
-    if (asistencias[j].id == id && asistencias[j].fecha == fecha) {
-      console.log("La asistencia ya fue registrada");
+  for (const campo of campos) {
+    if (estaVacio(campo.valor)) {
+      console.log(campo.mensaje);
       return false;
     }
   }
 
-  asistencias.push({ id: id, fecha: fecha, estado: estado });
+  if (!encontrarEstudiante(id)) {
+    console.log("No existe el estudiante");
+    return false;
+  }
+
+  if (asistenciaDuplicada(id, fecha)) {
+    console.log("La asistencia ya fue registrada");
+    return false;
+  }
+
+  asistencias.push({ id, fecha, estado });
   console.log("Asistencia registrada");
   return true;
 }
 
+// Busca todas las asistencias de un estudiante.
 function buscarAsistencia(id) {
-  var resultado = [];
-  for (var i = 0; i < asistencias.length; i++) {
-    if (asistencias[i].id == id) {
-      resultado.push(asistencias[i]);
-    }
-  }
-  if (resultado.length > 0) {
-    return resultado;
-  } else {
-    return [];
-  }
+  return asistencias.filter(asistencia => asistencia.id === id);
 }
 
+// Cuenta las asistencias presentes y atrasadas.
 function contarAsistencias(id) {
-  var total = 0;
-  for (var i = 0; i < asistencias.length; i++) {
-    if (asistencias[i].id == id) {
-      if (asistencias[i].estado == "Presente") {
-        total = total + 1;
-      } else {
-        if (asistencias[i].estado == "Atrasado") {
-          total = total + 1;
-        }
-      }
+  let total = 0;
+
+  for (const asistencia of asistencias) {
+    const corresponde = asistencia.id === id;
+    const asistio = ["Presente", "Atrasado"].includes(asistencia.estado);
+
+    if (corresponde && asistio) {
+      total++;
     }
   }
+
   return total;
 }
 
+// Devuelve una copia de la lista de estudiantes.
 function listarEstudiantes() {
-  var lista = [];
-  for (var i = 0; i < estudiantes.length; i++) {
-    lista.push(estudiantes[i]);
-  }
-  return lista;
+  return estudiantes.slice();
 }
 
+// Genera el resumen de asistencia de un estudiante.
 function obtenerResumen(id) {
-  var total = 0;
-  var presentes = 0;
-  var ausentes = 0;
+  let total = 0;
+  let presentes = 0;
+  let ausentes = 0;
 
-  for (var i = 0; i < asistencias.length; i++) {
-    if (asistencias[i].id == id) {
-      total++;
-      if (asistencias[i].estado == "Presente") {
-        presentes++;
-      } else {
-        if (asistencias[i].estado == "Ausente") {
-          ausentes++;
-        }
-      }
+  for (const asistencia of asistencias) {
+    if (asistencia.id !== id) {
+      continue;
+    }
+
+    total++;
+
+    if (asistencia.estado === "Presente") {
+      presentes++;
+    } else if (asistencia.estado === "Ausente") {
+      ausentes++;
     }
   }
 
   return {
     estudiante: id,
-    total: total,
-    presentes: presentes,
-    ausentes: ausentes
+    total,
+    presentes,
+    ausentes
   };
 }
 
+// Elimina todos los datos almacenados.
 function limpiarDatos() {
-  estudiantes = [];
-  asistencias = [];
+  estudiantes.length = 0;
+  asistencias.length = 0;
 }
 
 // Datos de demostración al ejecutar el programa directamente.
 if (require.main === module) {
   registrarEstudiante("EST001", "Ana Pérez", "Software");
   registrarEstudiante("EST002", "Luis López", "Redes");
+
   registrarAsistencia("EST001", "2026-11-09", "Presente");
   registrarAsistencia("EST002", "2026-11-09", "Atrasado");
+
   console.log("Estudiantes:", listarEstudiantes());
   console.log("Asistencias de EST001:", buscarAsistencia("EST001"));
   console.log("Resumen:", obtenerResumen("EST001"));
 }
 
+// Exportación de funciones.
 module.exports = {
   registrarEstudiante,
   registrarAsistencia,
