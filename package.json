@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-calidad-software",
+  "version": "1.0.0",
+  "description": "Proyecto académico para medir y mejorar la calidad de software con JavaScript e ISO/IEC 25010",
+  "main": "src/asistencia.js",
+  "scripts": {
+    "start": "node src/asistencia.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "metrics:size": "sloc src",
+    "metrics:lint": "eslint src",
+    "metrics:maintainability": "es6-plato -r -d informes/plato src",
+    "metrics:duplication": "jscpd src --reporters console",
+    "metrics": "npm run metrics:size && npm run metrics:lint && npm run metrics:maintainability && npm run metrics:duplication && npm run test:coverage"
+  },
+  "devDependencies": {
+    "es6-plato": "1.2.0",
+    "eslint": "8.57.1",
+    "jest": "29.7.0",
+    "jscpd": "4.0.5",
+    "sloc": "0.2.1",
+    "typhonjs-escomplex": "^0.1.0"
+  }
+}

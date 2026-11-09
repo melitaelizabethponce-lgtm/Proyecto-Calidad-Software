@@ -1,0 +1,4 @@
+node_modules/
+coverage/
+informes/plato/
+.DS_Store

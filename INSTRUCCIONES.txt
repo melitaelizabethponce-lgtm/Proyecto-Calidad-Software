@@ -1,0 +1,22 @@
+INICIO RÁPIDO EN VISUAL STUDIO CODE (Windows)
+
+1. Descomprime el ZIP.
+2. En VS Code: Archivo > Abrir carpeta > selecciona Proyecto-Calidad-Software.
+3. Abre Terminal > Nueva terminal.
+4. Ejecuta: npm install
+5. Ejecuta: npm start
+6. Ejecuta: npm test
+
+MEDICIÓN INICIAL:
+Ejecuta uno por uno:
+  npm run metrics:size
+  npm run metrics:lint
+  npm run metrics:maintainability
+  npm run metrics:duplication
+  npm run test:coverage
+
+IMPORTANTE:
+- Esta es la versión inicial, deliberadamente mejorable para la práctica.
+- Guarda capturas de los resultados en evidencias/metricas-iniciales.
+- No cambies el código antes de medir y guardar el estado inicial.
+- Luego realiza el commit en medicion-inicial y crea refactorizacion.
